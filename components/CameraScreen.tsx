@@ -16,7 +16,7 @@ import {
 } from 'react-native-vision-camera';
 
 type CameraScreenProps = {
-  navigation: any;
+  navigation?: any;
   onPhotoCaptured: (imagePath: string) => void;
 };
 
@@ -41,7 +41,6 @@ const CameraScreen: React.FC<CameraScreenProps> = ({ onPhotoCaptured }) => {
     }
   }, [device, hasPermission]);
 
-  // Handle permission denial
   const showPermissionAlert = useCallback(() => {
     Alert.alert(
       'Camera Permission Required',
